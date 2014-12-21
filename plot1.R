@@ -15,7 +15,9 @@ yearData <- aggregate(NEI$Emissions,
 png(filename = "~/exploratory_proj2/plot1.png")
 
 # Create the line plot using the base plot.
-plot(yearData$Year, yearData$x, type = "o", ylab = "Total PM2.5", xlab = "Year", main = "Total PM2.5 by Year")
+plot(yearData$Year, yearData$x, type = "o", ylab = "Total PM2.5", xlab = "Year", 
+     main = "Total PM2.5 for All Sources by Year")
 
-# Close the PNG device
+# Close the PNG device, and release yearData for memory management
 dev.off()
+rm(yearData)
